@@ -1,19 +1,18 @@
 const express = require("express");
-const routes = require("./routes/index"); // "./routes/index.js"
-/*const characterRoutes = require("./characters");
+const routes = require("./routes/index"); 
+const mongoose = require('mongoose');
 
-const { MongoClient } = require('mongodb');
 
-const client = new MongoClient('mongodb://localhost:3000');
-async function main(){
-    await client.connect();
-    console.log('Connection Successful');
-    const db = client.db('CHelper');
-    const characters = db.collection('characters');
-}*/
+
+mongoose.connect('mongodb://localhost/Partymembers');
+const db = mongoose.connection
+
+db.once('open', async () => {
+  console.log('Connected!');
+});
 
 const app = express();
-app.use(routes);//connects routes to app
+app.use("/", routes);//connects routes to app
 app.use(express.json());//converts req bodies to json
 
 

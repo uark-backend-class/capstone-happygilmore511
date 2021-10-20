@@ -1,5 +1,9 @@
-module.exports = (req, res, next) => {
-    console.log(req.method + " " + req.url);
-    next();
-  }
-  
+module.exports = {
+  test,
+}
+
+
+let test = (req, res, next) => {
+  res.send("Hey, User");
+  next();
+}
