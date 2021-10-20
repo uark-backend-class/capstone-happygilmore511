@@ -12,8 +12,8 @@ exports.getAll = async (req, res) => {
 exports.addOne = async (req, res) => {
   const character = new Character(req.body);
   await character.save();
-  res.json(Character);
-}//just adding json objects with id, no other model props
+  res.json(character);
+}//just adding json objects with id, no other model props(standby)
 
 exports.getOne = async (req, res) => {
   try {
