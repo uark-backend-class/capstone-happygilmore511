@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const characterController = require('../controllers/character.controller');
-
+const storyController = require('../controllers/story.controller');
 
 router.get("/", characterController.home)
 router.get("/characters", characterController.getAll)
@@ -10,9 +10,8 @@ router.put("/characters/:id", characterController.updateOne);
 router.delete("/characters/:id", characterController.deleteOne);
 
 /*
-router.get("/characters/:id/items", characters.allItems);
-router.post("characters/:id/items", characters.addItem);
-router.delete("characters/:id/items", characters.deleteItem);
+router.get('/story', storyController.tellParty);
+router.get('/story/:id', storyController.tellCharacter);
 */
 
 
