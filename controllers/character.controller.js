@@ -7,13 +7,13 @@ exports.home = async (req, res) => {
 exports.getAll = async (req, res) => {
   const characters = await Character.find();
   res.json(characters);
-}//retrieves new object ids, but no props
+}//success
 
 exports.addOne = async (req, res) => {
   const character = new Character(req.body);
   await character.save();
   res.json(character);
-}//just adding json objects with id, no other model props(standby)
+}//success
 
 exports.getOne = async (req, res) => {
   try {
