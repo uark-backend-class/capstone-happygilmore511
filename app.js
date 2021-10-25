@@ -1,10 +1,10 @@
+require('dotenv').config()
 const express = require("express");
 const routes = require("./routes/index"); 
 const mongoose = require('mongoose');
-require('dotenv').config()
 
 
-mongoose.connect('mongodb://localhost/Partymembers');
+mongoose.connect(process.env.MONGODB_CONNECTION);
 const db = mongoose.connection
 
 db.once('open', async () => {
