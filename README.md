@@ -1,4 +1,3 @@
-# Campaign Buddy
-An easy to use server able to reference and update character information
+Campaign Buddy
 
-//Mongo Atlas is connected to HerokuApp, but no documents are created in the online database when AddOne is used
+An interface which allows users to check the status of a DnD party. If the user is the player of a character, that user can edit that character's information. 
