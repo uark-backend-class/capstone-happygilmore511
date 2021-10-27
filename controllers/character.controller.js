@@ -2,7 +2,7 @@ const Character = require('../models/characterModels');
 
 exports.home = async (req, res) => {
   res.send("I work perfectly, nothing to see here")
-}//practice round passed
+}//success
 
 exports.getAll = async (req, res) => {
   const characters = await Character.find();
@@ -21,20 +21,21 @@ exports.getOne = async (req, res) => {
     if (!character) {
       res.status(404).send();
     }
-    res.jason(character);
+    res.json(character);
   }
   catch(error) {
     res.status(500).send();
   }
-}//no body returned
+}//success
 
 exports.updateOne = async (req, res) => {
+  console.log(req.body)
     const character = await Character.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!character) {
       res.status(404).send();
     }
     res.json(character);
-  }//changing "_id" doesn't show in res.body, neither does changing "name", a should-be-there prop
+  }
 
 exports.deleteOne = async (req, res) => {
   const deletedCharacter = await Character.findByIdAndDelete(req.params.id);
@@ -42,5 +43,5 @@ exports.deleteOne = async (req, res) => {
     res.status(404).send();
   }
   res.json(deletedCharacter);
-}//functional, but still no props on inserted docs
+}//success
 

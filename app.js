@@ -14,6 +14,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));//accept request bodies
 app.use(express.json());//converts req bodies to json
 app.use("/", routes);//connects routes to app
+app.use('*', (error, req, res, next) => {
+  res.status(500).send();
+});
 
 app.listen(process.env.PORT, () => {
   console.log("Now listening on port 3000");
