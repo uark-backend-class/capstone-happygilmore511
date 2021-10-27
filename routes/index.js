@@ -9,10 +9,10 @@ router.get("/characters/:id", characterController.getOne)
 router.put("/characters/:id", characterController.updateOne);
 router.delete("/characters/:id", characterController.deleteOne);
 
-/*
-router.get('/story', storyController.tellParty);
-router.get('/story/:id', storyController.tellCharacter);
-*/
+
+router.get('/story', storyController.storyParty);
+router.get('/story/:id', storyController.storyCharacter);
+
 
 
 module.exports = router
